@@ -1,2 +1,34 @@
+-----------
 Redux-Notes
+-----------
+
+--- Key concepts:
+- Store:	State of application data.
+- Action:	Changes a store.
+- Reducer:	Takes an Action and returns a new state.
+- Dispatch:	Executes an Action.
+
+-----------
+React-Redux
+-----------
+useSelector - Used by a React component to use a part of the application state.
+Code:		const taskList = useSelector(state => state.taskList);
+
+useDispatch - Declares an instance of a dispatch in a component.
+Code: 		const dispatch = useDispatch();
+			dispatch(actionName(param1, param2, ...))
+			
+----------------------
+Example of an Action
+----------------------
+export const setTaskState = (index, isDone) => {
+    console.log('setTaskState');
+    return {
+        type: 'SET_TASK_STATE', // all actions must have a type
+        payload: { // data required by the action is typically stored in the payload
+            index: index,
+            isDone: isDone    
+        }
+    }
+}
 
