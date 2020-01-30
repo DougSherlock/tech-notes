@@ -2,11 +2,15 @@
 Redux-Notes
 -----------
 
---- Key concepts:
+Author:		Doug Sherlock
+Purpose:	My personal reference notes for ReactJS.
+
+Key concepts:
 - Store:	State of application data.
 - Action:	Changes a store.
 - Reducer:	Takes an Action and returns a new state.
 - Dispatch:	Executes an Action.
+- Provider:	The root React element.  All child nodes have access to the store.
 
 -----------
 React-Redux

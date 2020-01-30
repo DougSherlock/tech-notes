@@ -1,0 +1,77 @@
+-----------
+React-Notes
+-----------
+
+Author:		Doug Sherlock
+Purpose:	My personal reference notes for ReactJS.
+
+ReactJS is a framework for building web UIs.  
+
+Its main building blocks are components.  Components can take the form of JavaScript functions or classes that inherit from React.Component.
+
+The data for componens reside in:
+- properties:  	which are immutable
+- state:		which is mutable
+
+Whether a react component is a class component or a function component, it must return HTML which takes the form of JSX.
+
+JSX is comprised of both HTML and snippets of JavaScript.  JavaScript in JSX is wrapped in curly braces, like this:
+
+	<div>{props.name}<div>
+	
+The HTML returned by JSX can have many child elements but only one root element, liks this:
+
+	<div>
+		<span>child 1</span>
+		<span>child 2</span>
+	<div>
+
+A FUNCTION COMPONENT can look like this:
+
+	const MyComponent = (props) => {
+		...some code
+		return (<div>
+			...some JSX
+			</div>)
+	}
+
+A FUNCTION COMPONENT can ALSO look like this:
+
+	function MyComponent (props) {
+		...some code
+		return (<div>
+			...some JSX
+			</div>)
+	}
+
+A CLASS COMPONENT looks like this:
+
+	class MyComponent extends React.Component {
+		constructor(props) {
+			super(props); // always call the parent constructor to init props
+			state = {
+				...a JavaScript object which specified the state used by the component
+			}
+		}
+		...some code
+		render () {
+			return <div>
+				...some JSX
+				</div>
+		}
+	}
+
+Whether a component is a class or a function, it is used by an application like this:
+
+const App = (props) => { // definition of the app that uses the component
+	return <div>
+			<MyComponent prop1="cat" prop2="dog" />
+		</div>
+}
+
+An application is rendered by the 'render' function like this:
+
+	ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
